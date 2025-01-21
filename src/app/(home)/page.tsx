@@ -1,14 +1,33 @@
+import CustomerReviews from "@/components/custom/CustomerReviews/CustomerReviews"
+import Footer from "@/components/custom/Footer/Footer"
+import Header from "@/components/custom/Header/Header"
+import HeroSlider from "@/components/custom/HeroSlider/HeroSlider"
+import ProductGrid from "@/components/custom/ProductGrid/ProductGrid"
+import ProductListing from "@/components/custom/ProductListing/ProductListing"
+import WorkProcess from "@/components/custom/WorkProcess/WorkProcess"
+
 function Home() {
   return (
-    <div className="container mx-auto py-4 px-4">
-      <div className="grid gap-x-5 gap-y-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5">
-        <div className="bg-blue-500 min-h-48 flex items-center justify-center rounded-lg">1</div>
-        <div className="bg-blue-400 min-h-48 flex items-center justify-center rounded-lg">2</div>
-        <div className="bg-blue-300 min-h-48 flex items-center justify-center rounded-lg">3</div>
-        <div className="bg-blue-200 min-h-48 flex items-center justify-center rounded-lg">4</div>
-        <div className="bg-blue-100 min-h-48 flex items-center justify-center rounded-lg">5</div>
+    <>
+      <Header />
+      <HeroSlider />
+      <ProductGrid />
+      <div className="container mx-auto px-4">
+        <div className="py-4">
+          <ProductListing title="Best Selling Product" />
+        </div>
+        <div className="py-4">
+          <ProductListing title="Trending Product" />
+        </div>
       </div>
-    </div>
+      <div className="px-4 sm:px-10 mt-5">
+        <CustomerReviews />
+      </div>
+      <div className="px-4 sm:px-10 mt-10 pb-10">
+        <WorkProcess />
+      </div>
+      <Footer />
+    </>
   )
 }
 
