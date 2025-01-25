@@ -1,7 +1,14 @@
+import DetailsSlider from "@/components/custom/DetailsPreview/DetailsSlider";
 import Footer from "@/components/custom/Footer/Footer";
 import Header from "@/components/custom/Header/Header";
 import ProductListing from "@/components/custom/ProductListing/ProductListing";
 import WorkProcess from "@/components/custom/WorkProcess/WorkProcess";
+
+
+
+
+
+
 
 function ProductDetails() {
   return (
@@ -16,6 +23,21 @@ function ProductDetails() {
           </div>
         </div>
       </div>
+      <div className="px-4 sm:px-10 mt-10 pb-10">
+        <div className="grid grid-cols-2 gap-5">
+          <div>
+            <DetailsSlider />
+          </div>
+          <div>2</div>
+        </div>
+      </div>
+
+
+
+
+
+
+
       <div className="container mx-auto px-1">
         <div className="py-4">
           <ProductListing title="" />

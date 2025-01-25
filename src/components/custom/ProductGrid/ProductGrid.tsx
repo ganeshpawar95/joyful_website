@@ -33,7 +33,7 @@ function ProductGrid() {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="order-2 sm:-order-none">
           <Link href="/">
             <Image
               className="h-full rounded-md"
