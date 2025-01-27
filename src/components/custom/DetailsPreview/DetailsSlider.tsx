@@ -36,8 +36,52 @@ function DetailsSlider() {
                 href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
             />
 
-            <div>
-                <div className="max-w-2/6">
+            <div className="flex items-center gap-x-5">
+                <div className="max-w-[160px]">
+                    <Slider
+                        className="leftSider"
+                        asNavFor={nav1}
+                        ref={slider => (sliderRef2 = slider)}
+                        slidesToShow={4}
+                        swipeToSlide={true}
+                        focusOnSelect={true}
+                        vertical={true}
+                        arrows={false}
+                        centerMode={true}
+                        centerPadding="100px"
+
+                    >
+                        <div>
+                            <Image className="w-[160px] h-full rounded-md" src={Product1} alt="" />
+                        </div>
+                        <div>
+                            <Image className="w-[160px] h-full rounded-md" src={Product2} alt="" />
+                        </div>
+                        <div>
+                            <Image className="w-[160px] h-full rounded-md" src={Product3} alt="" />
+                        </div>
+                        <div>
+                            <Image className="w-[160px] h-full rounded-md" src={Product4} alt="" />
+                        </div>
+                    </Slider>
+                </div>
+                <div className="flex-1 max-w-[700px] overflow-hidden rounded-md">
+                    <Slider asNavFor={nav2} ref={slider => (sliderRef1 = slider)} arrows={false}>
+                        <div>
+                            <Image className="h-full w-full rounded-md" src={Product1} alt="" />
+                        </div>
+                        <div>
+                            <Image className="h-full w-full rounded-md" src={Product2} alt="" />
+                        </div>
+                        <div>
+                            <Image className="h-full w-full rounded-md" src={Product3} alt="" />
+                        </div>
+                        <div>
+                            <Image className="h-full w-full rounded-md" src={Product4} alt="" />
+                        </div>
+                    </Slider>
+                </div>
+                {/* <div className="max-w-2/6">
                     <Slider
                         asNavFor={nav1}
                         ref={slider => (sliderRef2 = slider)}
@@ -79,7 +123,7 @@ function DetailsSlider() {
                             <Image className="h-full w-full rounded-md" src={Product4} alt="" />
                         </div>
                     </Slider>
-                </div>
+                </div> */}
             </div>
         </div>
     )
