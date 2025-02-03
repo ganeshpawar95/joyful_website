@@ -76,3 +76,12 @@ body {
 .leftSider .slick-current img {
   @apply !border-4 !border-blue-400 rounded-md;
 }
+
+.slick-list {
+  padding: 0px !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}

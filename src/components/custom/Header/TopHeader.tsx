@@ -2,7 +2,7 @@ import React from "react";
 
 function TopHeader() {
   return (
-    <div className="py-2 bg-gray-100">
+    <div className="py-2 bg-gray-100 overflow-hidden">
       {/* Marquee for mobile screens */}
       <div className="block sm:hidden">
         <marquee direction="left">

@@ -158,7 +158,7 @@ function Footer() {
         </div>
       </div>
       <div className="py-1  items-center justify-center">
-        <h3 className="text-center text-blue-400">
+        <h3 className="text-center text-blue-400 text-sm">
           Copyright © {new Date().getFullYear()} Joyful Surprises. All Rights
           Reserved.
         </h3>

@@ -174,16 +174,16 @@ function RightForm() {
                     </div>
                     <p className='text-gray-500 text-sm mt-2'>Max Photos: 8</p>
                 </div>
-                <div className='mt-5'>
-                    <div className='grid grid-cols-2 gap-4'>
+                <div className='mt-5 fixed bottom-0 left-0 w-full z-40 px-2 pb-2 sm:px-0 sm:relative sm:left-0 '>
+                    <div className='grid grid-cols-2 gap-2 sm:gap-4'>
                         <div>
-                            <Button className='w-full rounded-2xl'>
+                            <Button className='w-full sm:rounded-2xl'>
                                 <ShoppingCart />
                                 Add to Cart
                             </Button>
                         </div>
                         <div>
-                            <Button variant='orange' className='w-full rounded-2xl'>
+                            <Button variant='orange' className='w-full sm:rounded-2xl'>
                                 <ShoppingBag className='h-5 w-5' />
                                 Buy Now
                             </Button>
