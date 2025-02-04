@@ -12,6 +12,11 @@ import Product4 from '@/assets/images/products/5.jpg'
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive'
 
+import OfferImage1 from '@/assets/images/checkout.png';
+import OfferImage2 from '@/assets/images/24x7.png';
+import OfferImage3 from '@/assets/images/Satisfaction.jpg';
+import OfferImage4 from '@/assets/images/Validity.jpg';
+
 
 
 function DetailsSlider() {
@@ -84,68 +89,16 @@ function DetailsSlider() {
                             <Image className="h-full w-full rounded-md" src={Product4} alt="" />
                         </div>
                     </Slider>
+                    <div className="mt-2">
+                        <div className="flex justify-center gap-x-5 flex-wrap">
+                            <Image className="h-[80px] w-[80px]" src={OfferImage1} alt="" />
+                            <Image className="h-[80px] w-[80px]" src={OfferImage2} alt="" />
+                            <Image className="h-[80px] w-[80px]" src={OfferImage3} alt="" />
+                            <Image className="h-[80px] w-[80px]" src={OfferImage4} alt="" />
+                        </div>
+                    </div>
                 </Col>
             </Row>
-
-
-
-
-
-
-
-
-
-            <div className="flex-col-reverse sm:flex-col flex items-center gap-x-5">
-                <div className="max-w-[300px] sm:max-w-[160px]">
-
-                </div>
-                <div className="max-w-[700px] overflow-hidden rounded-md">
-
-                </div>
-                {/* <div className="max-w-2/6">
-                    <Slider
-                        asNavFor={nav1}
-                        ref={slider => (sliderRef2 = slider)}
-                        slidesToShow={4}
-                        swipeToSlide={true}
-                        focusOnSelect={true}
-                        vertical={true}
-                        arrows={false}
-                        centerMode={true}
-                        centerPadding={20}
-
-                    >
-                        <div>
-                            <Image className="h-[120px] w-[120px] rounded-md" src={Product1} alt="" />
-                        </div>
-                        <div>
-                            <Image className="h-[120px] w-[120px] rounded-md" src={Product2} alt="" />
-                        </div>
-                        <div>
-                            <Image className="h-[120px] w-[120px] rounded-md" src={Product3} alt="" />
-                        </div>
-                        <div>
-                            <Image className="h-[120px] w-[120px] rounded-md" src={Product4} alt="" />
-                        </div>
-                    </Slider>
-                </div>
-                <div className="col-span-1">
-                    <Slider asNavFor={nav2} ref={slider => (sliderRef1 = slider)} arrows={false}>
-                        <div>
-                            <Image className="h-full w-full rounded-md" src={Product1} alt="" />
-                        </div>
-                        <div>
-                            <Image className="h-full w-full rounded-md" src={Product2} alt="" />
-                        </div>
-                        <div>
-                            <Image className="h-full w-full rounded-md" src={Product3} alt="" />
-                        </div>
-                        <div>
-                            <Image className="h-full w-full rounded-md" src={Product4} alt="" />
-                        </div>
-                    </Slider>
-                </div> */}
-            </div>
         </div>
     )
 }

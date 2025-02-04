@@ -1,3 +1,4 @@
+"use client";
 import DetailsSlider from "@/components/custom/DetailsPreview/DetailsSlider";
 import Footer from "@/components/custom/Footer/Footer";
 import Header from "@/components/custom/Header/Header";
@@ -10,6 +11,8 @@ import Image from "next/image";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
+import { useMediaQuery } from 'react-responsive'
+import { useState } from "react";
 
 
 
@@ -17,8 +20,10 @@ import Col from "react-bootstrap/esm/Col";
 
 
 function ProductDetails() {
-
-
+  const isMobile = useMediaQuery({
+    query: '(max-width: 767px)'
+  })
+  const [isExpanded, setIsExpanded] = useState(false);
 
 
   return (
@@ -43,14 +48,23 @@ function ProductDetails() {
             <RightForm />
           </Col>
         </Row>
-        <div className="px-4 sm:px-20 mt-10">
+        <div className={`mt-10 overflow-hidden ${isMobile && !isExpanded ? 'max-h-[200px]' : ''}`}>
+          <h2 className="text-md font-semibold mb-2 text-gray-800">Some title goes here</h2>
           <p className="text-gray-600 leading-6 text-sm mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, quisquam! Recusandae corporis adipisci eum laborum labore nesciunt cumque, earum, eaque tempore facere dignissimos id consequuntur, quasi corrupti praesentium magnam velit obcaecati quibusdam. Magni, ipsum! Quasi ex quis magnam natus, tenetur iste non consequatur commodi asperiores? A nisi sed, optio repudiandae magni rerum facere deleniti sapiente dolorem ducimus pariatur eveniet, laboriosam aperiam adipisci! Minus fugit ipsum natus consequatur voluptatem laboriosam cumque voluptates cupiditate consequuntur quod nam quae alias totam itaque, molestias eum earum nulla sunt excepturi numquam dolor officiis perspiciatis. Fugiat impedit quam in sed reiciendis dolorum vero nemo natus nam.</p>
+          <h2 className="text-md font-semibold mb-2 text-gray-800 mt-3">Some title goes here</h2>
           <p className="text-gray-600 leading-6 text-sm mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut cupiditate fugit eum amet voluptates necessitatibus nulla iusto velit, accusantium illo iure voluptate asperiores accusamus ipsa reprehenderit, atque cumque earum laboriosam, odit temporibus assumenda quasi facere saepe. Libero placeat nobis quod voluptatem expedita, reiciendis, ut, corrupti voluptate eius error beatae. Nostrum!</p>
           <Image className="w-2/3 mt-5 mb-5" src={GiftImage} alt="" />
+          <h2 className="text-md font-semibold mb-2 text-gray-800 mt-3">Some title goes here</h2>
           <p className="text-gray-600 leading-6 text-sm mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut cupiditate fugit eum amet voluptates necessitatibus nulla iusto velit, accusantium illo iure voluptate asperiores accusamus ipsa reprehenderit, atque cumque earum laboriosam, odit temporibus assumenda quasi facere saepe. Libero placeat nobis quod voluptatem expedita, reiciendis, ut, corrupti voluptate eius error beatae. Nostrum!</p>
           <p className="text-gray-600 leading-6 text-sm mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. <a className="text-blue-500 underline font-medium ml-2" href="#">joyfulsuprise@gmail.com</a></p>
+          <h2 className="text-md font-semibold mb-2 text-gray-800 mt-3">Some title goes here</h2>
           <p className="text-gray-600 leading-6 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. atus consequatur voluptatem laboriosam cumque voluptates cupiditate consequuntur quod nam quae alias totam itaque, molestias eum earum nulla sunt excepturi numquam dolor officiis perspiciatis. Fugiat impedit quam </p>
         </div>
+        {isMobile &&
+          <button className="mt-2 text-sm text-blue-500 underline" type="button" onClick={() => setIsExpanded(!isExpanded)}>
+            {isExpanded ? "Show less..." : "Read more..."}
+          </button>
+        }
       </div>
 
 
@@ -59,10 +73,8 @@ function ProductDetails() {
 
 
 
-      <div className="container mx-auto px-1">
-        <div className="py-4">
-          <ProductListing title="" />
-        </div>
+      <div className="py-4 px-4 sm:px-10">
+        <ProductListing title="" />
       </div>
 
       <div className="px-4 sm:px-10 mt-10 pb-10">

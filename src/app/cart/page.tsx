@@ -22,8 +22,8 @@ function page() {
             </div>
             <div>
                 <CartTable />
-                <div className="mt-3 container mx-auto">
-                    <div className="w-1/2 ml-auto border">
+                <div className="sm:mt-3 container mx-auto">
+                    <div className="sm:w-1/2 ml-auto border">
                         <div className="bg-blue-400 py-3 px-6">
                             <h4 className="text-white font-medium">Cart Total</h4>
                         </div>
@@ -33,7 +33,7 @@ function page() {
                                 <h6 className="font-bold text-sm text-gray-800">₹2597.00</h6>
                             </div>
                             <div className="flex justify-end">
-                                <Button size="lg" className="mt-5">Proceed to Checkout</Button>
+                                <Button size="lg" className="mt-5 w-full sm:w-auto">Proceed to Checkout</Button>
                             </div>
                         </div>
                     </div>

@@ -165,14 +165,14 @@ function RightForm() {
                     <div className="border w-[300px] mt-3">
                         <input type="file" className='px-2 py-2 rounded-md' />
                     </div>
-                    <p className='text-gray-500 text-sm mt-2'>Max Photos: 1</p>
+                    <p className='text-red-600 text-sm mt-2'>Max Photos: 1</p>
                 </div>
                 <div className='mt-5'>
                     <h5>Multiple Upload Photos:</h5>
                     <div className="border w-[300px] mt-3">
                         <input type="file" className='px-2 py-2 rounded-md' />
                     </div>
-                    <p className='text-gray-500 text-sm mt-2'>Max Photos: 8</p>
+                    <p className='text-red-600 text-sm mt-2'>Max Photos: 8</p>
                 </div>
                 <div className='mt-5 fixed bottom-0 left-0 w-full z-40 px-2 pb-2 sm:px-0 sm:relative sm:left-0 '>
                     <div className='grid grid-cols-2 gap-2 sm:gap-4'>

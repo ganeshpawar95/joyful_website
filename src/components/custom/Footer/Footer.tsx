@@ -15,8 +15,8 @@ import Mestro from "../../../assets/images/payments/9.png";
 function Footer() {
   return (
     <>
-      <div className="bg-[#41C2EC] py-10 px-4 sm:px-20 flex justify-between flex-col sm:flex-row gap-y-5">
-        <div className="basis-1/3">
+      <div className="bg-[#41C2EC] py-10 px-4 sm:px-20 flex justify-between sm:flex-row gap-y-5 flex-wrap">
+        <div className="sm:basis-1/3">
           <h3 className="text-white text-2xl">About Us</h3>
           <p className="text-sm font-medium mt-1 text-white/80">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero
@@ -25,12 +25,12 @@ function Footer() {
             optio.
           </p>
         </div>
-        <div>
+        <div className="w-1/2 sm:w-auto">
           <h4 className="text-white/90 font-medium text-lg">Information</h4>
           <ul className="mt-2">
             <li>
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 Privacy Policy
@@ -38,7 +38,7 @@ function Footer() {
             </li>
             <li className="mt-1">
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 Terms of Service
@@ -46,7 +46,7 @@ function Footer() {
             </li>
             <li className="mt-1">
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 Refund Policy
@@ -54,7 +54,7 @@ function Footer() {
             </li>
             <li className="mt-1">
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 Shipping Policy
@@ -62,7 +62,7 @@ function Footer() {
             </li>
             <li className="mt-1">
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 Contact Us
@@ -70,12 +70,12 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="w-1/2 sm:w-auto">
           <h4 className="text-white/90 font-medium text-lg">Quick Links</h4>
           <ul className="mt-2">
             <li>
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 Home
@@ -83,7 +83,7 @@ function Footer() {
             </li>
             <li className="mt-1">
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 Products
@@ -91,7 +91,7 @@ function Footer() {
             </li>
             <li className="mt-1">
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 Find Your Star
@@ -104,7 +104,7 @@ function Footer() {
           <ul className="mt-2 flex items-center gap-3">
             <li>
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 <Instagram />
@@ -112,7 +112,7 @@ function Footer() {
             </li>
             <li className="mt-1">
               <a
-                className="text-white/70 font-medium text-sm text-center inline"
+                className="!text-white/70 font-medium text-sm text-center inline"
                 href="#"
               >
                 <Facebook />
@@ -121,7 +121,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-white/90 font-medium text-lg">Payments</h4>
+          <h4 className="text-white/90 font-medium text-lg text-right sm:text-left">Payments</h4>
           <ul className="mt-2 flex items-center gap-3">
             <li>
               <Image src={Gpay} alt="" width={50} height={50} />
