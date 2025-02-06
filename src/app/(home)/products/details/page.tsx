@@ -13,6 +13,8 @@ import Col from "react-bootstrap/esm/Col";
 
 import { useMediaQuery } from 'react-responsive'
 import { useState } from "react";
+import { ShoppingBag, ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 
 
@@ -44,20 +46,35 @@ function ProductDetails() {
           <Col xl={6}>
             <DetailsSlider />
           </Col>
-          <Col xl={6} className="max-h-[670px] overflow-y-auto">
-            <RightForm />
+          <Col xl={6}>
+            <div className="max-h-[670px] overflow-y-auto">
+              <RightForm />
+            </div>
+            <div className='mt-5 fixed bottom-0 left-0 w-full z-40 px-2 pb-2 sm:px-0 sm:relative sm:left-0 '>
+              <div className='grid grid-cols-2 gap-2 sm:gap-4'>
+                <div>
+                  <Button className='w-full sm:rounded-2xl'>
+                    <ShoppingCart />
+                    Add to Cart
+                  </Button>
+                </div>
+                <div>
+                  <Button variant='orange' className='w-full sm:rounded-2xl'>
+                    <ShoppingBag className='h-5 w-5' />
+                    Buy Now
+                  </Button>
+                </div>
+              </div>
+            </div>
           </Col>
         </Row>
         <div className={`mt-10 overflow-hidden ${isMobile && !isExpanded ? 'max-h-[200px]' : ''}`}>
-          <h2 className="text-md font-semibold mb-2 text-gray-800">Some title goes here</h2>
+          <h2 className="text-xl font-semibold mb-2 text-gray-800 text-center">Description</h2>
           <p className="text-gray-600 leading-6 text-sm mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, quisquam! Recusandae corporis adipisci eum laborum labore nesciunt cumque, earum, eaque tempore facere dignissimos id consequuntur, quasi corrupti praesentium magnam velit obcaecati quibusdam. Magni, ipsum! Quasi ex quis magnam natus, tenetur iste non consequatur commodi asperiores? A nisi sed, optio repudiandae magni rerum facere deleniti sapiente dolorem ducimus pariatur eveniet, laboriosam aperiam adipisci! Minus fugit ipsum natus consequatur voluptatem laboriosam cumque voluptates cupiditate consequuntur quod nam quae alias totam itaque, molestias eum earum nulla sunt excepturi numquam dolor officiis perspiciatis. Fugiat impedit quam in sed reiciendis dolorum vero nemo natus nam.</p>
-          <h2 className="text-md font-semibold mb-2 text-gray-800 mt-3">Some title goes here</h2>
           <p className="text-gray-600 leading-6 text-sm mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut cupiditate fugit eum amet voluptates necessitatibus nulla iusto velit, accusantium illo iure voluptate asperiores accusamus ipsa reprehenderit, atque cumque earum laboriosam, odit temporibus assumenda quasi facere saepe. Libero placeat nobis quod voluptatem expedita, reiciendis, ut, corrupti voluptate eius error beatae. Nostrum!</p>
           <Image className="w-2/3 mt-5 mb-5" src={GiftImage} alt="" />
-          <h2 className="text-md font-semibold mb-2 text-gray-800 mt-3">Some title goes here</h2>
           <p className="text-gray-600 leading-6 text-sm mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut cupiditate fugit eum amet voluptates necessitatibus nulla iusto velit, accusantium illo iure voluptate asperiores accusamus ipsa reprehenderit, atque cumque earum laboriosam, odit temporibus assumenda quasi facere saepe. Libero placeat nobis quod voluptatem expedita, reiciendis, ut, corrupti voluptate eius error beatae. Nostrum!</p>
           <p className="text-gray-600 leading-6 text-sm mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. <a className="text-blue-500 underline font-medium ml-2" href="#">joyfulsuprise@gmail.com</a></p>
-          <h2 className="text-md font-semibold mb-2 text-gray-800 mt-3">Some title goes here</h2>
           <p className="text-gray-600 leading-6 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. atus consequatur voluptatem laboriosam cumque voluptates cupiditate consequuntur quod nam quae alias totam itaque, molestias eum earum nulla sunt excepturi numquam dolor officiis perspiciatis. Fugiat impedit quam </p>
         </div>
         {isMobile &&

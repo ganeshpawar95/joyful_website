@@ -12,7 +12,7 @@ function Home() {
       <Header />
       <HeroSlider />
       <ProductGrid />
-      <div className="container mx-auto px-1">
+      <div className="px-4 sm:px-10">
         <div className="py-4">
           <ProductListing title="Best Selling Product" />
         </div>

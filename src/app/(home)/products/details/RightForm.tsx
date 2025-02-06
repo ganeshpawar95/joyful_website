@@ -33,7 +33,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
 
-
+import { DatePicker } from 'antd';
 
 
 
@@ -137,28 +137,7 @@ function RightForm() {
                 </div>
                 <div className='mt-5 flex items-center gap-x-4'>
                     <h5>Pick The Date:</h5>
-                    <Popover>
-                        <PopoverTrigger asChild>
-                            <Button
-                                variant={"outline"}
-                                className={cn(
-                                    "w-[280px] justify-start text-left font-normal",
-                                    !date && "text-muted-foreground"
-                                )}
-                            >
-                                <CalendarIcon className="mr-2 h-4 w-4" />
-                                {date ? format(date, "PPP") : <span>Pick a date</span>}
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0">
-                            <Calendar
-                                mode="single"
-                                selected={date}
-                                onSelect={setDate}
-                                initialFocus
-                            />
-                        </PopoverContent>
-                    </Popover>
+                    <DatePicker className="w-[200px] bg-white h-[45px] font-semibold text-sm hover:border-gray-500 focus:border-gray-500 outline-0" />
                 </div>
                 <div className='mt-5'>
                     <h5>Single Upload Photos:</h5>
@@ -174,23 +153,6 @@ function RightForm() {
                     </div>
                     <p className='text-red-600 text-sm mt-2'>Max Photos: 8</p>
                 </div>
-                <div className='mt-5 fixed bottom-0 left-0 w-full z-40 px-2 pb-2 sm:px-0 sm:relative sm:left-0 '>
-                    <div className='grid grid-cols-2 gap-2 sm:gap-4'>
-                        <div>
-                            <Button className='w-full sm:rounded-2xl'>
-                                <ShoppingCart />
-                                Add to Cart
-                            </Button>
-                        </div>
-                        <div>
-                            <Button variant='orange' className='w-full sm:rounded-2xl'>
-                                <ShoppingBag className='h-5 w-5' />
-                                Buy Now
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </>
     )

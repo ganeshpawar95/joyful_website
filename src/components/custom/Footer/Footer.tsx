@@ -99,7 +99,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="w-1/2 sm:w-auto">
           <h4 className="text-white/90 font-medium text-lg">Follow Us</h4>
           <ul className="mt-2 flex items-center gap-3">
             <li>
@@ -120,8 +120,8 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div>
-          <h4 className="text-white/90 font-medium text-lg text-right sm:text-left">Payments</h4>
+        <div className="w-1/2 sm:w-auto">
+          <h4 className="text-white/90 font-medium text-lg">Payments</h4>
           <ul className="mt-2 flex items-center gap-3">
             <li>
               <Image src={Gpay} alt="" width={50} height={50} />
