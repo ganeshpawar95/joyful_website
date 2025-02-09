@@ -85,3 +85,15 @@ a {
   text-decoration: none !important;
   color: inherit !important;
 }
+
+.ant-steps-item-title {
+  @apply font-medium text-sm text-gray-900
+}
+
+.ant-steps-item-description {
+  @apply text-sm font-medium
+}
+
+.ant-steps-item {
+  @apply min-h-[90px]
+}
