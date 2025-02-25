@@ -5,7 +5,7 @@ import Product2 from '@/assets/images/products/p2.jpg'
 
 function SingleReviews() {
     return (
-        <div className="shadow-sm p-4 rounded-md bg-white">
+        <div className="shadow-sm p-3 md:p-4 rounded-md bg-white">
             <div className="flex gap-1">
                 <Star size={20} className="fill-green-600 stroke-none" />
                 <Star size={20} className="fill-green-600 stroke-none" />

@@ -35,15 +35,15 @@ function ProductListing(props: any) {
   return (
     <div>
       <div className="text-center">
-        <h3 className="text-3xl font-semibold">{title}</h3>
+        <h3 className="text-xl md:text-3xl font-semibold">{title}</h3>
       </div>
-      <div className="grid grid-cols-2 gap-5 mt-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 md:gap-5 mt-3 md:mt-5 sm:grid-cols-2 lg:grid-cols-4">
         {Products.map((product, index) => (
           <SingleProductCard key={index} product={product} />
         ))}
       </div>
       <div className="text-center mt-6">
-        <Button>Show More</Button>
+        <Button className="w-full md:w-auto">Show More</Button>
       </div>
     </div>
   );

@@ -19,12 +19,12 @@ function ProductGrid() {
       //   className="container mx-auto py-4 px-0"
       className="py-4 px-0"
     >
-      <div className="grid sm:grid-cols-3 gap-4">
-        <div className="grid grid-cols-2 gap-4 sm:block">
+      <div className="grid sm:grid-cols-3 gap-2 md:gap-4">
+        <div className="grid grid-cols-2 gap-2 md:gap-4 sm:block">
           <div>
             <Link href="/">
               <Image
-                className="rounded-md h-[400px] sm:h-[340px]"
+                className="rounded-md h-[200px] md:h-[400px] sm:h-[340px]"
                 src={ProductImage2}
                 alt="product"
               />
@@ -33,7 +33,7 @@ function ProductGrid() {
           <div className="sm:mt-4">
             <Link href="/">
               <Image
-                className="rounded-md h-[400px] sm:h-[340px]"
+                className="rounded-md h-[200px] md:h-[400px] sm:h-[340px]"
                 src={ProductImage3}
                 alt="product"
               />
@@ -49,11 +49,11 @@ function ProductGrid() {
             />
           </Link>
         </div>
-        <div className="grid grid-cols-2 gap-4 sm:block">
+        <div className="grid grid-cols-2 gap-2 md:gap-4 sm:block">
           <div>
             <Link href="/">
               <Image
-                className="rounded-md h-[400px] sm:h-[340px]"
+                className="rounded-md h-[200px] md:h-[400px] sm:h-[340px]"
                 src={ProductImage4}
                 alt="product"
               />
@@ -62,7 +62,7 @@ function ProductGrid() {
           <div className="sm:mt-4">
             <Link href="/">
               <Image
-                className="rounded-md h-[400px] sm:h-[340px]"
+                className="rounded-md h-[200px] md:h-[400px] sm:h-[340px]"
                 src={ProductImage5}
                 alt="product"
               />

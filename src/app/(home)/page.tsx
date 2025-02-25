@@ -12,15 +12,15 @@ function Home() {
       <Header />
       <HeroSlider />
       <ProductGrid />
-      <div className="px-4 sm:px-10">
-        <div className="py-4">
+      <div className="px-2 sm:px-10">
+        <div className="md:py-4">
           <ProductListing title="Best Selling Product" />
         </div>
         <div className="py-4">
           <ProductListing title="Trending Product" />
         </div>
       </div>
-      <div className="px-4 sm:px-10 mt-5">
+      <div className="px-2 md:px-4 sm:px-10 mt-2 md:mt-5">
         <CustomerReviews />
       </div>
       <div className="px-4 sm:px-10 mt-10 pb-10">

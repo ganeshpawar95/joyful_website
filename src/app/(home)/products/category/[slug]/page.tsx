@@ -20,10 +20,8 @@ function ProductCategory() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-1">
-        <div className="py-4">
-          <ProductListing title="" />
-        </div>
+      <div className="px-4 sm:px-10">
+        <ProductListing title="" />
       </div>
 
       <div className="px-4 sm:px-10 mt-10 pb-10">
