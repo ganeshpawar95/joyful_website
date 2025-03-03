@@ -31,11 +31,11 @@ function page() {
                     <div className='flex justify-between items-center'>
                         <h4 className='text-2xl font-semibold text-gray-700'>Thank you for your order <span className='text-red-500'>#123456</span></h4>
                         <div className='flex gap-3'>
-                            <Button size="sm">Continue Shopping</Button>
                             <Button variant='outline' size="sm">
                                 <DownloadIcon />
                                 Add Invoice
                             </Button>
+                            <Button size="sm">Continue Shopping</Button>
                         </div>
                     </div>
                     <div className='mt-4 border border-gray-500 p-10 pb-0 rounded-md'>

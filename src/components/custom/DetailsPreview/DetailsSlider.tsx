@@ -99,7 +99,7 @@ function DetailsSlider() {
                         </div>
                     </Slider>
                     <div className="mt-2">
-                        {!isMobile ? (
+                        {/* {!isMobile ? (
                             <>
                                 <Image src={OfferImageDesktop} alt="" />
                             </>
@@ -110,8 +110,8 @@ function DetailsSlider() {
                                 <Image className="h-[80px] w-[80px]" src={OfferImage3} alt="" />
                                 <Image className="h-[80px] w-[80px]" src={OfferImage4} alt="" />
                             </div>
-                        )}
-
+                        )} */}
+                        <Image className="mb-4 sm:mb-0" src={OfferImageDesktop} alt="" />
                     </div>
                 </Col>
             </Row>

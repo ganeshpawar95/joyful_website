@@ -32,8 +32,9 @@ function page() {
                                 <h6 className="font-semibold text-sm text-gray-600">Total</h6>
                                 <h6 className="font-bold text-sm text-gray-800">₹2597.00</h6>
                             </div>
-                            <div className="flex justify-end">
-                                <Button size="lg" className="mt-5 w-full sm:w-auto">Proceed to Checkout</Button>
+                            <div className="flex flex-col sm:flex-row justify-end gap-x-2 gap-y-2 mt-5">
+                                <Button size="lg" variant="outline" className="w-full sm:w-auto">Continue Shopping</Button>
+                                <Button size="lg" className="w-full sm:w-auto">Proceed to Checkout</Button>
                             </div>
                         </div>
                     </div>
