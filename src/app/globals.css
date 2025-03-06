@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Josefin Sans', 'Josefin Sans Fallback' !important;
+}
+
+* {
+  font-family: 'Josefin Sans', 'Josefin Sans Fallback' !important;
 }
 
 @layer base {
@@ -96,4 +100,45 @@ a {
 
 .ant-steps-item {
   @apply min-h-[90px]
+}
+
+ul.slick-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+}
+
+.slick-active .customDots {
+  @apply bg-brand
+}
+
+.productDetailsTabCard .ant-tabs-nav::before {
+  display: none;
+}
+
+.ant-tabs-nav-list {
+  @apply bg-blue-200
+}
+
+.ant-tabs-tab {
+  @apply !bg-transparent font-semibold text-sm !py-4 !rounded-none !text-gray-800 !border-0
+}
+
+.ant-tabs-tab-active {
+  @apply !bg-[#2E3368]
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  @apply !text-white
+}
+
+@media only screen and (max-width: 767px) {
+
+  .ant-tabs-card>.ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-card>div>.ant-tabs-nav .ant-tabs-tab {
+    padding: 1px 10px;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-size: 13px !important;
+  }
 }

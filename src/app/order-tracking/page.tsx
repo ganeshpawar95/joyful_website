@@ -28,9 +28,9 @@ function page() {
             <Header />
             <div className='py-10'>
                 <div className="container mx-auto">
-                    <div className='flex justify-between items-center'>
+                    <div className='flex justify-between items-center flex-wrap gap-y-3'>
                         <h4 className='text-2xl font-semibold text-gray-700'>Thank you for your order <span className='text-red-500'>#123456</span></h4>
-                        <div className='flex gap-3'>
+                        <div className='flex gap-3 flex-wrap'>
                             <Button variant='outline' size="sm">
                                 <DownloadIcon />
                                 Add Invoice
@@ -38,14 +38,14 @@ function page() {
                             <Button size="sm">Continue Shopping</Button>
                         </div>
                     </div>
-                    <div className='mt-4 border border-gray-500 p-10 pb-0 rounded-md'>
-                        <h4 className='text-2xl font-medium flex items-center gap-2'>
+                    <div className='mt-4 border border-gray-500 p-3 sm:p-10 pb-0 rounded-md'>
+                        <h4 className='text-xl sm:text-2xl font-medium flex items-center gap-2 flex-wrap'>
                             <div className='h-10 w-10 bg-brand rounded-full flex items-center justify-center text-white'>
                                 <Truck />
                             </div>
                             <span>We will send you tracking information over Whatsapp</span>
                         </h4>
-                        <div className='mt-5'>
+                        <div className='mt-3 sm:mt-5'>
                             <Row>
                                 <Col xl={7}>
                                     <Row>
@@ -105,7 +105,7 @@ function page() {
                                     </Row>
                                 </Col>
                                 <Col xl={5}>
-                                    <div className='pl-10'>
+                                    <div className='mt-3 sm:mt-0 sm:pl-10'>
                                         <Steps
                                             progressDot
                                             current={1}
