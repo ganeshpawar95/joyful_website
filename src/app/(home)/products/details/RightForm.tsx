@@ -33,7 +33,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
 
-import { DatePicker } from 'antd';
+import { DatePicker, Radio } from 'antd';
 
 
 
@@ -65,22 +65,83 @@ function RightForm() {
             <div className='mt-5'>
                 {/* single item */}
                 <div>
-                    <h5>Select the Frame Color:</h5>
+                    <h5>Select Certificate Color:</h5>
                     <div className='flex gap-x-5'>
-                        <div className='cursor-pointer'>
-                            <div className='mt-3'>
-                                <Image className='h-32 w-32 rounded-md' src={Product1} alt='' />
-                                <h4 className='mt-1 text-center text-sm font-semibold text-gray-600'>Green</h4>
-                            </div>
-                        </div>
-                        <div className='cursor-pointer'>
-                            <div className='mt-3'>
-                                <Image className='h-32 w-32 rounded-md' src={Product2} alt='' />
-                                <h4 className='mt-1 text-center text-sm font-semibold text-gray-600'>Red</h4>
-                            </div>
-                        </div>
+
+
+                    </div>
+                    <div>
+                        <Radio.Group
+                            //   onChange={onChange}
+                            //   value={value}
+                            className='selectRadioBoxCustom'
+                            options={[
+                                {
+                                    value: 1,
+                                    label: (
+                                        <div className='cursor-pointer'>
+                                            <div className='mt-3'>
+                                                <Image className='h-32 w-32 rounded-md border-3 border-red-500' src={Product1} alt='' />
+                                                {/* <h4 className='mt-1 text-center text-sm font-semibold text-gray-600'>Green</h4> */}
+                                            </div>
+                                        </div>
+                                    ),
+                                },
+                                {
+                                    value: 2,
+                                    label: (
+                                        <div className='cursor-pointer'>
+                                            <div className='mt-3'>
+                                                <Image className='h-32 w-32 rounded-md border-3 border-green-500' src={Product2} alt='' />
+                                                {/* <h4 className='mt-1 text-center text-sm font-semibold text-gray-600'>Red</h4> */}
+                                            </div>
+                                        </div>
+                                    ),
+                                },
+                            ]}
+                        />
                     </div>
                 </div>
+                <div className='mt-3'>
+                    <h5>Select Frame Color:</h5>
+                    <div className='flex gap-x-5'>
+                    </div>
+                    <div>
+                        <Radio.Group defaultValue="a" size="large" className='mt-2' buttonStyle="solid">
+                            <Radio.Button value="a">Black</Radio.Button>
+                            <Radio.Button value="b">White</Radio.Button>
+                            <Radio.Button value="c">Blue</Radio.Button>
+                            <Radio.Button value="d">Red</Radio.Button>
+                        </Radio.Group>
+                    </div>
+                </div>
+                <div className='mt-3'>
+                    <h5>Select Frame Size (INCH):</h5>
+                    <div className='flex gap-x-5'>
+                    </div>
+                    <div>
+                        <Radio.Group defaultValue="b" size="large" className='mt-2' buttonStyle="solid">
+                            <Radio.Button value="a">8 x 12</Radio.Button>
+                            <Radio.Button value="b">10 x 14</Radio.Button>
+                            <Radio.Button value="c">12 x 17</Radio.Button>
+                            <Radio.Button value="d">16 x 16</Radio.Button>
+                        </Radio.Group>
+                    </div>
+                </div>
+                <div className='mt-3'>
+                    <h5>Select Thickness:</h5>
+                    <div className='flex gap-x-5'>
+                    </div>
+                    <div>
+                        <Radio.Group defaultValue="c" size="large" className='mt-2' buttonStyle="solid">
+                            <Radio.Button value="a">3mm</Radio.Button>
+                            <Radio.Button value="b">4mm</Radio.Button>
+                            <Radio.Button value="c">5mm</Radio.Button>
+                        </Radio.Group>
+                    </div>
+                </div>
+
+
                 <div className='mt-5 flex items-center gap-x-4'>
                     <h5>Dropdown option testing:</h5>
                     <Select>

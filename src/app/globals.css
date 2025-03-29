@@ -132,6 +132,48 @@ ul.slick-dots {
   @apply !text-white
 }
 
+.ant-select-selector {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.ant-select-selection-placeholder {
+  @apply !text-muted-foreground
+}
+
+.selectRadioBoxCustom .ant-radio-wrapper {
+  position: relative;
+}
+
+.selectRadioBoxCustom .ant-radio {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.ant-radio-inner {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.selectRadioBoxCustom .ant-radio-wrapper .ant-radio-checked .ant-radio-inner::after {
+  transform: scale(0.575) !important;
+}
+
+.ant-radio-button-wrapper:hover {
+  color: #3DC2EE !important;
+}
+
+.ant-radio-button-wrapper-checked {
+  background-color: #3DC2EE !important;
+  border-color: #3DC2EE !important;
+}
+
+.ant-radio-button-wrapper-checked:hover {
+  color: #fff !important;
+}
+
+
 @media only screen and (max-width: 767px) {
 
   .ant-tabs-card>.ant-tabs-nav .ant-tabs-tab,
