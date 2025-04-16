@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Josefin_Sans } from 'next/font/google'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Josefin_Sans } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
-
+import ReduxProvider from "../store/Provider";
 
 const josfin = Josefin_Sans({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -20,11 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
-      <body
-        className={`${josfin.className} bg-[#FCFBF9] overflow-x-hidden`}
-
-      >
-        {children}
+      <body className={`${josfin.className} bg-[#FCFBF9] overflow-x-hidden`}>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

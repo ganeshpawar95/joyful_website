@@ -4,24 +4,31 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import BannerImage1 from "@/assets/images/banner/1.jpg";
-import BannerImage2 from "@/assets/images/banner/2.jpg";
-import BannerImage3 from "@/assets/images/banner/3.jpg";
-import BannerImage4 from "@/assets/images/banner/4.jpg";
+import { IMAGE_BASE_URL } from "@/utils/constants";
 
-function HeroSlider() {
+function HeroSlider({ banner_list = [] }) {
   return (
     <Carousel className="relative">
       <CarouselContent>
-        <CarouselItem>
-          <Image src={BannerImage1} className="w-full" alt="image" />
-        </CarouselItem>
-        <CarouselItem>
+        {banner_list
+          // .sort((a, b) => a.banner_priority - b.banner_priority)
+          .map((res: any) => (
+            <CarouselItem key={res.id}>
+              <Image
+                src={IMAGE_BASE_URL + res.banner_name}
+                className="w-full"
+                width={800}
+                height={400}
+                alt="image"
+              />
+            </CarouselItem>
+          ))}
+        {/* <CarouselItem>
           <Image src={BannerImage2} className="w-full" alt="image" />
         </CarouselItem>
         <CarouselItem>
           <Image src={BannerImage3} className="w-full" alt="image" />
-        </CarouselItem>
+        </CarouselItem> */}
       </CarouselContent>
       {/* <CarouselPrevious className="absolute left-4 h-10 w-10 bg-transparent border-0 text-gray-950" />
       <CarouselNext className="absolute right-4  h-10 w-10 bg-transparent border-0 text-gray-950" /> */}
