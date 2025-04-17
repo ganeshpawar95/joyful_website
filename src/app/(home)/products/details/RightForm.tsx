@@ -34,7 +34,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
-import { DatePicker, Radio } from "antd";
+import { DatePicker, Radio, Form } from "antd";
+
+import { get_certificate_color, capitalizeFirstLetter } from "./helpers";
+import DynamicForm from "./Dynamic_form";
 
 function StarRating({ rating }: { rating: any }) {
   const fullStars = Math.floor(rating); // Full stars
@@ -108,184 +111,99 @@ function RightForm(props: any) {
       {/* form part start */}
       <div className="mt-5">
         {/* single item */}
-        <div>
-          <h5>Select Certificate Color:</h5>
-          <div className="flex gap-x-5"></div>
+        {product_details?.certificate_colors.length != 0 && (
           <div>
-            <Radio.Group
-              //   onChange={onChange}
-              //   value={value}
-              className="selectRadioBoxCustom"
-              options={[
+            <h5>Select Certificate Color:</h5>
+            <div className="flex gap-x-5"></div>
+
+            <Form.Item
+              name="certificate_color"
+              rules={[
                 {
-                  value: 1,
-                  label: (
-                    <div className="cursor-pointer">
-                      <div className="mt-3">
-                        <Image
-                          className="h-32 w-32 rounded-md border-3 border-red-500"
-                          src={Product1}
-                          alt=""
-                        />
-                        {/* <h4 className='mt-1 text-center text-sm font-semibold text-gray-600'>Green</h4> */}
-                      </div>
-                    </div>
-                  ),
-                },
-                {
-                  value: 2,
-                  label: (
-                    <div className="cursor-pointer">
-                      <div className="mt-3">
-                        <Image
-                          className="h-32 w-32 rounded-md border-3 border-green-500"
-                          src={Product2}
-                          alt=""
-                        />
-                        {/* <h4 className='mt-1 text-center text-sm font-semibold text-gray-600'>Red</h4> */}
-                      </div>
-                    </div>
-                  ),
+                  required: true,
+                  message: "Please select a certificate color!",
                 },
               ]}
-            />
-          </div>
-        </div>
-        <div className="mt-3">
-          <h5>Select Frame Color:</h5>
-          <div className="flex gap-x-5"></div>
-          <div>
-            <Radio.Group
-              defaultValue="a"
-              size="large"
-              className="mt-2"
-              buttonStyle="solid"
             >
-              <Radio.Button value="a">Black</Radio.Button>
-              <Radio.Button value="b">White</Radio.Button>
-              <Radio.Button value="c">Blue</Radio.Button>
-              <Radio.Button value="d">Red</Radio.Button>
-            </Radio.Group>
+              <Radio.Group
+                className="selectRadioBoxCustom"
+                options={get_certificate_color(
+                  product_details?.certificate_colors,
+                  product_details?.thumbnail
+                )}
+              />
+            </Form.Item>
           </div>
-        </div>
-        <div className="mt-3">
-          <h5>Select Frame Size (INCH):</h5>
-          <div className="flex gap-x-5"></div>
-          <div>
-            <Radio.Group
-              defaultValue="b"
-              size="large"
-              className="mt-2"
-              buttonStyle="solid"
+        )}
+        {product_details?.frame_colors.length != 0 && (
+          <div className="mt-3">
+            <h5>Select Frame Color:</h5>
+            <div className="flex gap-x-5"></div>
+            <Form.Item
+              name="frame_color"
+              rules={[
+                { required: true, message: "Please select a frame color!" },
+              ]}
             >
-              <Radio.Button value="a">8 x 12</Radio.Button>
-              <Radio.Button value="b">10 x 14</Radio.Button>
-              <Radio.Button value="c">12 x 17</Radio.Button>
-              <Radio.Button value="d">16 x 16</Radio.Button>
-            </Radio.Group>
+              <Radio.Group size="large" className="mt-2" buttonStyle="solid">
+                {product_details?.frame_colors.map((master: any) => (
+                  <Radio.Button key={master.name} value={master.name}>
+                    {capitalizeFirstLetter(master.name)}
+                  </Radio.Button>
+                ))}
+              </Radio.Group>
+            </Form.Item>
           </div>
-        </div>
-        <div className="mt-3">
-          <h5>Select Thickness:</h5>
-          <div className="flex gap-x-5"></div>
-          <div>
-            <Radio.Group
-              defaultValue="c"
-              size="large"
-              className="mt-2"
-              buttonStyle="solid"
+        )}
+        {product_details?.frame_size.length != 0 && (
+          <div className="mt-3">
+            <h5>Select Frame Size (INCH):</h5>
+            <div className="flex gap-x-5"></div>
+            <Form.Item
+              name="frame_size"
+              rules={[
+                { required: true, message: "Please select a frame size!" },
+              ]}
             >
-              <Radio.Button value="a">3mm</Radio.Button>
-              <Radio.Button value="b">4mm</Radio.Button>
-              <Radio.Button value="c">5mm</Radio.Button>
-            </Radio.Group>
+              <Radio.Group size="large" className="mt-2" buttonStyle="solid">
+                {product_details?.frame_size.map((master: any) => (
+                  <Radio.Button value={master.name}>
+                    {capitalizeFirstLetter(master.name)}
+                  </Radio.Button>
+                ))}
+              </Radio.Group>
+            </Form.Item>
           </div>
-        </div>
+        )}
+        {product_details?.frame_thickness.length != 0 && (
+          <div className="mt-3">
+            <h5>Select Thickness:</h5>
+            <div className="flex gap-x-5"></div>
+            <Form.Item
+              name="frame_thickness"
+              rules={[
+                { required: true, message: "Please select a frame thickness!" },
+              ]}
+            >
+              <Radio.Group
+                defaultValue="c"
+                size="large"
+                className="mt-2"
+                buttonStyle="solid"
+              >
+                {product_details?.frame_thickness.map((master: any) => (
+                  <Radio.Button value={master.name}>
+                    {capitalizeFirstLetter(master.name)}
+                  </Radio.Button>
+                ))}
+              </Radio.Group>
+            </Form.Item>
+          </div>
+        )}
 
-        <div className="mt-5 flex items-center gap-x-4">
-          <h5>Dropdown option testing:</h5>
-          <Select>
-            <SelectTrigger className="w-[200px] bg-white">
-              <SelectValue placeholder="Theme" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light">Small</SelectItem>
-              <SelectItem value="dark">Medium</SelectItem>
-              <SelectItem value="system">Large</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="mt-5">
-          <h5>Radio option testing:</h5>
-          <RadioGroup defaultValue="option-one" className="flex gap-x-4 mt-3">
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem
-                className="h-5 w-5"
-                value="option-one"
-                id="option-one"
-              />
-              <Label htmlFor="option-one">Small</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem
-                className="h-5 w-5"
-                value="option-two"
-                id="option-two"
-              />
-              <Label htmlFor="option-two">Medium</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem
-                className="h-5 w-5"
-                value="option-three"
-                id="option-three"
-              />
-              <Label htmlFor="option-three">Large</Label>
-            </div>
-          </RadioGroup>
-        </div>
-        <div className="mt-5">
-          <h5>Check button option testing:</h5>
-          <div className="mt-3 flex items-center gap-x-4">
-            <div className="flex items-center space-x-2">
-              <Checkbox className="h-5 w-5" id="medium" />
-              <Label htmlFor="medium">Medium</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox className="h-5 w-5" id="large" />
-              <Label htmlFor="large">large</Label>
-            </div>
-          </div>
-        </div>
-        <div className="mt-5 flex items-center gap-x-4">
-          <h5>Plan List option testing:</h5>
-          <ToggleGroup variant="outline" type="single">
-            <ToggleGroupItem value="bold" aria-label="Toggle bold">
-              Medium
-            </ToggleGroupItem>
-            <ToggleGroupItem value="italic" aria-label="Toggle italic">
-              Large
-            </ToggleGroupItem>
-          </ToggleGroup>
-        </div>
-        <div className="mt-5 flex items-center gap-x-4">
-          <h5>Pick The Date:</h5>
-          <DatePicker className="w-[200px] bg-white h-[45px] font-semibold text-sm hover:border-gray-500 focus:border-gray-500 outline-0" />
-        </div>
-        <div className="mt-5">
-          <h5>Single Upload Photos:</h5>
-          <div className="border w-[300px] mt-3">
-            <input type="file" className="px-2 py-2 rounded-md" />
-          </div>
-          <p className="text-red-600 text-sm mt-2">Max Photos: 1</p>
-        </div>
-        <div className="mt-5">
-          <h5>Multiple Upload Photos:</h5>
-          <div className="border w-[300px] mt-3">
-            <input type="file" className="px-2 py-2 rounded-md" />
-          </div>
-          <p className="text-red-600 text-sm mt-2">Max Photos: 8</p>
-        </div>
+        {product_details?.product_tag_options.length != 0 && (
+          <DynamicForm data={product_details?.product_tag_options} />
+        )}
       </div>
     </>
   );

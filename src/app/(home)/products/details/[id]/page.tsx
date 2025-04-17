@@ -16,7 +16,7 @@ import { Fragment, useState } from "react";
 import { ShoppingBag, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import { Tabs } from "antd";
+import { Tabs, Form } from "antd";
 import type { TabsProps } from "antd";
 import { useProductDetailsHook } from "@/utils/hooks";
 import DOMPurify from "dompurify";
@@ -91,6 +91,9 @@ function ProductDetails({ params }: { params: { id: string } }) {
     },
   ];
 
+  console.log("product_details", product_details);
+
+  function handleSubmit() {}
   return (
     <>
       <Header />
@@ -105,7 +108,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
         </div>
       </div>
       {product_details != null && (
-        <Fragment>
+        <Form onFinish={handleSubmit}>
           <div className="px-3 sm:px-10 mt-10 pb-10">
             <Row>
               <Col xl={6}>
@@ -120,13 +123,17 @@ function ProductDetails({ params }: { params: { id: string } }) {
                 <div className="mt-5 fixed bottom-0 left-0 w-full z-40 px-2 pb-2 sm:px-0 sm:relative sm:left-0 ">
                   <div className="grid grid-cols-2 gap-2 sm:gap-4">
                     <div>
-                      <Button className="w-full sm:rounded-md">
+                      <Button type="submit" className="w-full sm:rounded-md">
                         <ShoppingCart />
                         Add to Cart
                       </Button>
                     </div>
                     <div>
-                      <Button variant="orange" className="w-full sm:rounded-md">
+                      <Button
+                        type="submit"
+                        variant="orange"
+                        className="w-full sm:rounded-md"
+                      >
                         <ShoppingBag className="h-5 w-5" />
                         Buy Now
                       </Button>
@@ -152,7 +159,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
           <div className="px-4 sm:px-10 mt-10 pb-10">
             <WorkProcess />
           </div>
-        </Fragment>
+        </Form>
       )}
       <Footer />
     </>

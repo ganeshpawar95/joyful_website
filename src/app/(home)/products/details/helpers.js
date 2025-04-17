@@ -1,0 +1,32 @@
+import { IMAGE_BASE_URL } from "@/utils/constants";
+import Image from "next/image";
+
+export function get_certificate_color(data, image) {
+  var tmp = [];
+
+  data.map((master) => {
+    tmp.push({
+      value: master.id,
+      label: (
+        <div className="cursor-pointer">
+          <div className="mt-3">
+            <Image
+              className={`h-32 w-32 rounded-md border-3 border-${master.name}-500`}
+              src={IMAGE_BASE_URL + image}
+              alt=""
+              width={100}
+              height={100}
+            />
+            {/* <h4 className='mt-1 text-center text-sm font-semibold text-gray-600'>Green</h4> */}
+          </div>
+        </div>
+      ),
+    });
+  });
+  return tmp;
+}
+
+export function capitalizeFirstLetter(name) {
+  if (!name) return "";
+  return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+}
