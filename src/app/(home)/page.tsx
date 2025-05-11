@@ -12,7 +12,6 @@ import { useHomePageHook } from "../../utils/hooks";
 function Home() {
   const { banner_list, best_selling, trending, reviews_all } =
     useHomePageHook();
-  console.log("reviews_all", reviews_all);
   return (
     <>
       <Header />

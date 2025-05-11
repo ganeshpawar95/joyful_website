@@ -6,34 +6,8 @@ import {
   StarHalf,
   Star as StarOutline,
 } from "lucide-react";
-import Product1 from "@/assets/images/products/1.jpg";
-import Product2 from "@/assets/images/products/3.jpg";
-import Image from "next/image";
-
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { getDiscount, getAverageRating } from "../../../../utils/helpers";
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Input } from "@/components/ui/input";
 import { DatePicker, Radio, Form } from "antd";
 
 import { get_certificate_color, capitalizeFirstLetter } from "./helpers";

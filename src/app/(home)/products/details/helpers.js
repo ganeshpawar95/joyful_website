@@ -6,11 +6,12 @@ export function get_certificate_color(data, image) {
 
   data.map((master) => {
     tmp.push({
-      value: master.id,
+      value: master.name,
       label: (
         <div className="cursor-pointer">
           <div className="mt-3">
             <Image
+              style={{ borderColor: master.name }}
               className={`h-32 w-32 rounded-md border-3 border-${master.name}-500`}
               src={IMAGE_BASE_URL + image}
               alt=""

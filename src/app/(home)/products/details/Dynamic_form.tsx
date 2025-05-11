@@ -7,8 +7,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
 import { Fragment } from "react";
 import { Form, Input, DatePicker, Upload, Checkbox, Radio } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
@@ -42,19 +40,24 @@ function DYRadioField({
   options,
 }: DYDropdownProps & { name: string }) {
   return (
-    <Form.Item
-      name={name}
-      label={label_name}
-      rules={[{ required: true, message: `Please select ${label_name}` }]}
-    >
-      <Radio.Group>
-        {options?.map((opt) => (
-          <Radio key={opt} value={opt}>
-            {opt}
-          </Radio>
-        ))}
-      </Radio.Group>
-    </Form.Item>
+    <div className="mt-3">
+      <h5>{label_name}:</h5>
+      <div className="flex gap-x-5 mb-2"></div>
+
+      <Form.Item
+        name={name}
+        label={""}
+        rules={[{ required: true, message: `Please select ${label_name}` }]}
+      >
+        <Radio.Group>
+          {options?.map((opt) => (
+            <Radio key={opt} value={opt}>
+              {opt}
+            </Radio>
+          ))}
+        </Radio.Group>
+      </Form.Item>
+    </div>
   );
 }
 
@@ -64,27 +67,40 @@ function DYCheckBox({
   options,
 }: DYDropdownProps & { name: string }) {
   return (
-    <Form.Item
-      name={name}
-      label={label_name}
-      rules={[
-        { required: true, message: `Please select at least one ${label_name}` },
-      ]}
-    >
-      <Checkbox.Group options={options} />
-    </Form.Item>
+    <div className="mt-3">
+      <h5>{label_name}:</h5>
+      <div className="flex gap-x-5 mb-2"></div>
+
+      <Form.Item
+        name={name}
+        label={""}
+        rules={[
+          {
+            required: true,
+            message: `Please select at least one ${label_name}`,
+          },
+        ]}
+      >
+        <Checkbox.Group options={options} />
+      </Form.Item>
+    </div>
   );
 }
 
 function DYDateField({ label_name, name }: DYDropdownProps & { name: string }) {
   return (
-    <Form.Item
-      name={name}
-      label={label_name}
-      rules={[{ required: true, message: `Please select ${label_name}` }]}
-    >
-      <DatePicker style={{ width: "300px" }} />
-    </Form.Item>
+    <div className="mt-3">
+      <h5>{label_name}:</h5>
+      <div className="flex gap-x-5 mb-2"></div>
+
+      <Form.Item
+        name={name}
+        label={""}
+        rules={[{ required: true, message: `Please select ${label_name}` }]}
+      >
+        <DatePicker style={{ width: "300px" }} />
+      </Form.Item>
+    </div>
   );
 }
 
@@ -93,19 +109,24 @@ function DYSinglePhotoField({
   name,
 }: DYDropdownProps & { name: string }) {
   return (
-    <Form.Item
-      name={name}
-      label={label_name}
-      valuePropName="fileList"
-      getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
-      rules={[{ required: true, message: `Please upload ${label_name}` }]}
-    >
-      <Upload maxCount={1} beforeUpload={() => false}>
-        <button type="button">
-          <UploadOutlined /> Upload
-        </button>
-      </Upload>
-    </Form.Item>
+    <div className="mt-3">
+      <h5>{label_name}:</h5>
+      <div className="flex gap-x-5 mb-2"></div>
+
+      <Form.Item
+        name={name}
+        label={""}
+        valuePropName="fileList"
+        getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
+        rules={[{ required: true, message: `Please upload ${label_name}` }]}
+      >
+        <Upload maxCount={1} beforeUpload={() => false}>
+          <button type="button">
+            <UploadOutlined /> Upload
+          </button>
+        </Upload>
+      </Form.Item>
+    </div>
   );
 }
 
@@ -114,30 +135,40 @@ function DYMultiplePhotoField({
   name,
 }: DYDropdownProps & { name: string }) {
   return (
-    <Form.Item
-      name={name}
-      label={label_name}
-      valuePropName="fileList"
-      getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
-    >
-      <Upload multiple maxCount={8} beforeUpload={() => false}>
-        <button type="button">
-          <UploadOutlined /> Upload
-        </button>
-      </Upload>
-    </Form.Item>
+    <div className="mt-3">
+      <h5>{label_name}:</h5>
+      <div className="flex gap-x-5 mb-2"></div>
+
+      <Form.Item
+        name={name}
+        label={""}
+        valuePropName="fileList"
+        getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
+      >
+        <Upload multiple maxCount={8} beforeUpload={() => false}>
+          <button type="button">
+            <UploadOutlined /> Upload
+          </button>
+        </Upload>
+      </Form.Item>
+    </div>
   );
 }
 
 function DYTextField({ label_name, name }: DYDropdownProps & { name: string }) {
   return (
-    <Form.Item
-      name={name}
-      label={label_name}
-      rules={[{ required: true, message: `Please enter ${label_name}` }]}
-    >
-      <Input style={{ width: "300px" }} />
-    </Form.Item>
+    <div className="mt-3">
+      <h5>{label_name}:</h5>
+      <div className="flex gap-x-5 mb-2"></div>
+
+      <Form.Item
+        name={name}
+        label={""}
+        rules={[{ required: true, message: `Please enter ${label_name}` }]}
+      >
+        <Input style={{ width: "300px" }} />
+      </Form.Item>
+    </div>
   );
 }
 
@@ -146,22 +177,25 @@ function DYShortNoteField({
   name,
 }: DYDropdownProps & { name: string }) {
   return (
-    <Form.Item
-      name={name}
-      label={label_name}
-      rules={[{ required: true, message: `Please enter ${label_name}` }]}
-    >
-      <Input.TextArea style={{ width: "300px" }} rows={4} />
-    </Form.Item>
+    <div className="mt-3">
+      <h5>{label_name}:</h5>
+      <div className="flex gap-x-5 mb-2"></div>
+
+      <Form.Item
+        name={name}
+        label={""}
+        rules={[{ required: true, message: `Please enter ${label_name}` }]}
+      >
+        <Input.TextArea style={{ width: "300px" }} rows={4} />
+      </Form.Item>
+    </div>
   );
 }
 
 export default function DynamicForm(props: any) {
   const { data } = props;
-  console.log("data==>", data);
   return (
     <>
-      {/* .sort((a: any, b: any) => a.priority - b.priority) */}
       {[...data]
         ?.sort((a: any, b: any) => a.priority - b.priority)
         .map((master: any) => (

@@ -6,8 +6,6 @@ import ProductListing from "@/components/custom/ProductListing/ProductListing";
 import WorkProcess from "@/components/custom/WorkProcess/WorkProcess";
 import RightForm from "../RightForm";
 
-import GiftImage from "@/assets/images/banner/gift-image.jpg";
-import Image from "next/image";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
@@ -22,7 +20,7 @@ import { useProductDetailsHook } from "@/utils/hooks";
 import DOMPurify from "dompurify";
 
 function ProductDetails({ params }: { params: { id: string } }) {
-  const { product_details } = useProductDetailsHook();
+  const { product_details, add_to_cart, form } = useProductDetailsHook();
   console.log("product_details", product_details);
   const isMobile = useMediaQuery({
     query: "(max-width: 767px)",
@@ -91,9 +89,9 @@ function ProductDetails({ params }: { params: { id: string } }) {
     },
   ];
 
-  console.log("product_details", product_details);
-
-  function handleSubmit() {}
+  function handleSubmit(values: any) {
+    add_to_cart({ ...product_details, user_data: values });
+  }
   return (
     <>
       <Header />
@@ -108,7 +106,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
         </div>
       </div>
       {product_details != null && (
-        <Form onFinish={handleSubmit}>
+        <Form onFinish={handleSubmit} form={form}>
           <div className="px-3 sm:px-10 mt-10 pb-10">
             <Row>
               <Col xl={6}>

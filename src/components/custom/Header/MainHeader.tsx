@@ -66,15 +66,15 @@ function MainHeader() {
           <div className="rightContent basis-1/4">
             <ul className="flex items-center justify-end gap-x-4">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/cart"
                   className="p-3 block relative rounded-full hover:text-brand"
                 >
                   <ShoppingCartIcon />
                   <span className="absolute right-0 top-0 font-bold text-sm text-red-500">
                     0
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="block hover:text-brand">
