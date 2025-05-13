@@ -76,11 +76,11 @@ function MainHeader() {
                   </span>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="block hover:text-brand">
                   <UserIcon />
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
