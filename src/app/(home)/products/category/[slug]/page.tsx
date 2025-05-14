@@ -1,8 +1,5 @@
-import CustomerReviews from "@/components/custom/CustomerReviews/CustomerReviews";
 import Footer from "@/components/custom/Footer/Footer";
 import Header from "@/components/custom/Header/Header";
-import HeroSlider from "@/components/custom/HeroSlider/HeroSlider";
-import ProductGrid from "@/components/custom/ProductGrid/ProductGrid";
 import ProductListing from "@/components/custom/ProductListing/ProductListing";
 import WorkProcess from "@/components/custom/WorkProcess/WorkProcess";
 

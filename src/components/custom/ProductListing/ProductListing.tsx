@@ -1,5 +1,5 @@
-import Product1 from "@/assets/images/products/p1.jpg";
-import Product2 from "@/assets/images/products/p2.jpg";
+"use client";
+
 import SingleProductCard from "./SingleProductCard";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
